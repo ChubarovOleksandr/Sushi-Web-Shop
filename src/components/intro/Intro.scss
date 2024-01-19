@@ -1,0 +1,65 @@
+// import
+
+@import "../../styles/variables";
+
+// style
+
+.header {
+   height: 10%;
+   width: 100%;
+   border-bottom: 1px solid rgb(40, 40, 40);
+   a {
+      color: $color;
+      font-size: 18px;
+      font-family: $Montserat;
+      text-transform: uppercase;
+      &:active, &:visited, &:hover {
+         color: $color;
+      }
+   }
+   .header__body {
+      width: 90%;
+      max-width: 90%;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .left {
+         display: flex;
+         justify-content: space-between;
+         img.header__logo {
+            width: 70px;
+            height: 70px;
+         }
+         .card__basket {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 0 30px;
+            .card__counter {
+               position: absolute;
+               display: none;
+               left: 17%;
+               top: 50%;
+               background: rgb(141, 141, 141);
+               border-radius: 100%;
+               width: 18px;
+               height: 18px;
+            }
+            .card__basket-icon {
+               width: 40px;
+               height: 35px;
+               margin: 0 15px;
+            }
+         }
+      }
+      .right {
+         display: flex;
+         justify-content: space-between;
+         a {
+            margin: 0 15px;
+         }
+      }
+   }
+}

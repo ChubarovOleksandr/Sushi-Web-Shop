@@ -9,7 +9,7 @@ const Header = () => {
                <img src="/img/logo.png" alt="logo" className="header__logo" />
                <NavLink to='basket' className="card__basket">
                   <span className="card__counter"></span>
-                  <img src="/img/basket.png" alt="basket" />
+                  <img src="/img/basket.png" className='card__basket-icon' alt="basket" />
                   Кошик
                </NavLink>
             </div>

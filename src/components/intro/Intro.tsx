@@ -1,13 +1,13 @@
-import Body from './Body';
-import Header from './Header';
+import Body from './IntroBody';
+import Header from './IntroHeader';
 import './Intro.scss';
 
 export const Intro: React.FC = () => {
    
    return (
-      <div className="home">
+      <>
          <Header />
          <Body />
-      </div>
+      </>
    )
 }

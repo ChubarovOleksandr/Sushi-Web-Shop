@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Intro } from './components/intro/Intro'
+import { Intro } from '../intro/Intro'
 
 function App() {
 
