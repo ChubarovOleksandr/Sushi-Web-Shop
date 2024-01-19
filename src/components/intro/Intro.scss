@@ -4,62 +4,84 @@
 
 // style
 
-.header {
-   height: 10%;
-   width: 100%;
-   border-bottom: 1px solid rgb(40, 40, 40);
-   a {
-      color: $color;
-      font-size: 18px;
-      font-family: $Montserat;
-      text-transform: uppercase;
-      &:active, &:visited, &:hover {
-         color: $color;
-      }
-   }
-   .header__body {
-      width: 90%;
-      max-width: 90%;
-      margin: 0 auto;
-      height: 100%;
+.home {
+   height: 100%;
+   position: relative;
+   .main {
+      height: 70%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      .left {
+      justify-content: center;
+      .background {
+         position: absolute;
+         top: 0;
+         left: 0;
+         background: url("src/assets/img/firstPage_image.png") 0% 23% / auto 145% no-repeat;
+         width: 100%;
+         height: 100%;
+         z-index: -1;
+      }
+      .main__body {
          display: flex;
-         justify-content: space-between;
-         img.header__logo {
-            width: 70px;
-            height: 70px;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         width: 70%;
+         margin: 0 auto;
+         font-family: $Nunito;
+         color: $first;
+         text-transform: uppercase;
+         .pretitle,
+         .posttitle {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            opacity: 0.9;
          }
-         .card__basket {
+         .pretitle {
+            align-self: flex-end;
+         }
+         .main__title-line {
             display: flex;
-            align-items: center;
             position: relative;
-            margin: 0 30px;
-            .card__counter {
+            .title {
+               font-size: 175px;
+               text-wrap: wrap;
+               text-align: right;
+               font-weight: 700;
+               z-index: -10;
+            }
+            .main__button {
                position: absolute;
-               display: none;
-               left: 17%;
-               top: 50%;
-               background: rgb(141, 141, 141);
-               border-radius: 100%;
-               width: 18px;
-               height: 18px;
-            }
-            .card__basket-icon {
-               width: 40px;
-               height: 35px;
-               margin: 0 15px;
+               left: 0;
+               bottom: 10%;
+               background: $first;
+               color: $third;
+               font-weight: 900;
+               font-size: 20px;
+               padding: 3% 4.5%;
+               border-radius: 25px;
+               letter-spacing: 2px;
             }
          }
       }
-      .right {
-         display: flex;
-         justify-content: space-between;
-         a {
-            margin: 0 15px;
-         }
-      }
+   }
+   .slick-slider {
+      z-index: -5;
+   }
+   .slick-slide {
+      margin: 0 15px;
+   }
+   .slider__item {
+      width: 250px !important;
+      text-transform: uppercase;
+      background: $bg2;
+      color: $first;
+      position: relative;
+      font-size: 16px;
+      font-family: $Nunito;
+      padding: 20px 0;
+      border-radius: 25px;
+      text-align: center;
    }
 }

@@ -2,7 +2,16 @@
 
 $bg: rgb(17, 17, 17);
 
-$color: rgb(119, 119, 119);
+$bg2: rgb(27,27,27);
+
+$first: rgb(255, 255, 255); // for important and big title or element which must concentrate view
+
+$second: rgb(119, 119, 119); // for less important, default text, border
+
+$third: rgb(44,44,44); // for text with $first bg
+
+
+
 
 $Roboto: 'Roboto', sans-serif;
 
@@ -11,3 +20,5 @@ $Open: 'Open Sans', sans-serif;
 $Poppins: 'Poppins', sans-serif;
 
 $Montserat: 'Montserrat', sans-serif;
+
+$Nunito: 'Nunito Sans', sans-serif;

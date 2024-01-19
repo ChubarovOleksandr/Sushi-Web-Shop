@@ -1,0 +1,67 @@
+// import
+
+@import "../../styles/variables";
+
+.header {
+   z-index: 10;
+   height: 10%;
+   width: 100%;
+   border-bottom: 1px solid rgb(40, 40, 40);
+   a {
+      color: $second;
+      font-family: $Montserat;
+      font-weight: 700;
+      font-size: 16px;
+      text-transform: uppercase;
+      &:active,
+      &:visited,
+      &:hover {
+         color: $second;
+      }
+   }
+   .header__body {
+      width: 70%;
+      max-width: 70%;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .left {
+         display: flex;
+         justify-content: space-between;
+         img.header__logo {
+            width: 70px;
+            height: 70px;
+         }
+         .card__basket {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin: 0 60px;
+            .card__counter {
+               position: absolute;
+               display: none;
+               left: 17%;
+               top: 50%;
+               background: rgb(141, 141, 141);
+               border-radius: 100%;
+               width: 18px;
+               height: 18px;
+            }
+            .card__basket-icon {
+               width: 40px;
+               height: 35px;
+               margin: 0 15px;
+            }
+         }
+      }
+      .right {
+         display: flex;
+         justify-content: space-between;
+         a {
+            margin: 0 0 0 40px;
+         }
+      }
+   }
+}

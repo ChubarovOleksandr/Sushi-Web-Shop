@@ -13,11 +13,15 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3-pre.0",
-    "scss": "^0.2.4"
+    "react-slick": "^0.29.0",
+    "scss": "^0.2.4",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/react-slick": "^0.23.13",
+    "@types/slick-carousel": "^1.6.40",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
