@@ -66,22 +66,23 @@
          }
       }
    }
+   
    .slick-slider {
       z-index: -5;
-   }
-   .slick-slide {
-      margin: 0 15px;
-   }
-   .slider__item {
-      width: 250px !important;
-      text-transform: uppercase;
-      background: $bg2;
-      color: $first;
-      position: relative;
-      font-size: 16px;
-      font-family: $Nunito;
-      padding: 20px 0;
-      border-radius: 25px;
-      text-align: center;
+      .slick-slide {
+         margin: 0 15px;
+      }
+      .slider__item {
+         width: 250px !important;
+         text-transform: uppercase;
+         background: $bg2;
+         color: $fourth;
+         position: relative;
+         font-size: 16px;
+         font-family: $Nunito;
+         padding: 20px 0;
+         border-radius: 25px;
+         text-align: center;
+      }
    }
 }

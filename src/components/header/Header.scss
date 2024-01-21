@@ -13,10 +13,14 @@
       font-weight: 700;
       font-size: 16px;
       text-transform: uppercase;
+      transition: all .3s;
       &:active,
-      &:visited,
-      &:hover {
+      &:visited {
          color: $second;
+      }
+      &:hover {
+         color: $first;
+         transition: all .3s;
       }
    }
    .header__body {
