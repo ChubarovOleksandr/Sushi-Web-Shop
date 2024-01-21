@@ -62,6 +62,11 @@
                padding: 3% 4.5%;
                border-radius: 25px;
                letter-spacing: 2px;
+               transition: all .4s;
+               &:hover {
+                  transition: all .4s;
+                  box-shadow: 0 0 10px $first;
+               }
             }
          }
       }
@@ -69,9 +74,6 @@
    
    .slick-slider {
       z-index: -5;
-      .slick-slide {
-         margin: 0 15px;
-      }
       .slider__item {
          width: 250px !important;
          text-transform: uppercase;

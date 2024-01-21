@@ -14,7 +14,7 @@ export const Intro: React.FC = () => {
                <span className="pretitle">Переконайся</span>
                <div className="main__title-line">
                <span className="title">ДУУУУУУУУЖЕ СМАЧНО</span>
-               <NavLink to='shop' className="main__button">скуштувати</NavLink>
+               <NavLink to='/shop' className="main__button">скуштувати</NavLink>
                </div>
                <span className="posttitle">забираєш сам?<br />- забери знижку</span>
             </div>

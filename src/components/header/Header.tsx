@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
+   
    return (
       <header className="header">
          <nav className="header__body">
@@ -14,10 +15,10 @@ const Header = () => {
                </NavLink>
             </div>
             <div className="right">
-               <NavLink to='/'>Головна</NavLink>
+               <NavLink to='/' className='main'>Головна</NavLink>
                <NavLink to='/shop'>Меню</NavLink>
-               <NavLink to='/reviews'>Відгуки</NavLink>
-               <NavLink to='/help'>Допомога</NavLink>
+               <NavLink to='/info'>Інформація</NavLink>
+               <NavLink to='/about'>Про нас</NavLink>
             </div>
          </nav>
       </header>

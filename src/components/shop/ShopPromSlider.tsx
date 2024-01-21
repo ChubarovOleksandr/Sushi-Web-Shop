@@ -1,0 +1,45 @@
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import './Shop.scss';
+import { NavLink } from 'react-router-dom';
+
+export const ShopSlider = () => {
+
+   const settings = {
+      dots: true,
+      fade: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      pauseOnHover: true,
+   };
+
+   return (
+      <Slider {...settings}>
+         <div className='slider__item slider__coupon'>
+            <div className="overlay"></div>
+            <h1 className="slider__item-title">Отримайте <span>10%</span><br />знижку!</h1>
+            <p className="slider__item-subtitle">Порадуйте себе та близьких дивовижним кулінарним досвідом!
+               Наші неповторні роли – це справжнє втілення <span>смаку</span> та <span>задоволення</span></p>
+            <NavLink to='/info' className='slider__item-button'>Забрати</NavLink>
+         </div>
+         <div className='slider__item slider__birthday'>
+            <div className="overlay"></div>
+            <h2 className="slider__item-title"></h2>
+            <p className="slider__item-subtitle"></p>
+            <NavLink to='/info' className='slider__item-button'>Докладніше</NavLink>
+         </div>
+         <div className='slider__item slider__delievery'>
+            <div className="overlay"></div>
+            <h3 className="slider__item-title"></h3>
+            <p className="slider__item-subtitle"></p>
+            <NavLink to='/info' className='slider__item-button'>Докладніше</NavLink>
+         </div>
+      </Slider>
+   )
+}

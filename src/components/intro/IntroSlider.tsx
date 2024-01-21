@@ -28,12 +28,12 @@ export const IntroSlider = () => {
       dots: false,
       infinite: true,
       rtl: false,
-      speed: 5000,
-      slidesToShow: 5,
-      initialSlide: 1,
-      slidesToScroll: 1,
+      speed: 25000,
+      slidesToShow: 6,
+      initialSlide: 0,
+      slidesToScroll: 6,
       autoplay: true,
-      autoplaySpeed: 300,
+      autoplaySpeed: 1,
       cssEase: 'linear',
       arrows: false,
       pauseOnHover: false,
@@ -41,6 +41,12 @@ export const IntroSlider = () => {
 
    return (
       <Slider ref={introSliderRef} {...settings}>
+         <div className="slider__item">висока якість</div>
+         <div className="slider__item">на зв'язку</div>
+         <div className="slider__item">швидка доставка</div>
+         <div className="slider__item">новинки</div>
+         <div className="slider__item">відмінний смак</div>
+         <div className="slider__item">найкращий вибір</div>
          <div className="slider__item">висока якість</div>
          <div className="slider__item">на зв'язку</div>
          <div className="slider__item">швидка доставка</div>
