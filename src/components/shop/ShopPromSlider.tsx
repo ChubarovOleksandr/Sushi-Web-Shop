@@ -12,7 +12,7 @@ export const ShopSlider = () => {
       infinite: true,
       autoplay: true,
       autoplaySpeed: 5000,
-      speed: 500,
+      speed: 1000,
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
@@ -30,14 +30,15 @@ export const ShopSlider = () => {
          </div>
          <div className='slider__item slider__birthday'>
             <div className="overlay"></div>
-            <h2 className="slider__item-title"></h2>
-            <p className="slider__item-subtitle"></p>
+            <h2 className="slider__item-title">Розгадайте секрети<br />смаку</h2>
+            <p className="slider__item-subtitle">
+               Створюйте яскраві спогади разом із нами, вибираючи <span>подарункові талони</span>, які запам'ятаються на довгі роки.</p>
             <NavLink to='/info' className='slider__item-button'>Докладніше</NavLink>
          </div>
          <div className='slider__item slider__delievery'>
             <div className="overlay"></div>
-            <h3 className="slider__item-title"></h3>
-            <p className="slider__item-subtitle"></p>
+            <h3 className="slider__item-title"><span>Швидка i безкоштовна</span> доставка прямо до Вас!</h3>
+            <p className="slider__item-subtitle">До 59 хв</p>
             <NavLink to='/info' className='slider__item-button'>Докладніше</NavLink>
          </div>
       </Slider>
