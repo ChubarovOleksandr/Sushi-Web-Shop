@@ -1,15 +1,36 @@
+// animation
+
+@keyframes changeCircle {
+   0% {
+      margin: 2vw auto;
+   }
+   50% {
+      margin: 3vw auto 1vw;
+   }
+   100% {
+      margin: 2vw auto;
+   }
+}
+
 // import
 
-@import "../../styles/variables";
+@import "../../assets/styles/variables";
 
 // style
+
+body::-webkit-scrollbar {
+  width: 0;
+}
 
 .shop {
    .shop__body {
       width: 80%;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
       .slick-slider {
          margin: 5vh 0 0 0;
+         min-width: 1px;
          .slider__item {
             width: 70vw !important;
             height: 70vh;
@@ -46,7 +67,11 @@
             span {
                color: $sixth;
             }
-            h1,h2,h3,p,a {
+            h1,
+            h2,
+            h3,
+            p,
+            a {
                z-index: 5;
             }
             .overlay {
@@ -136,22 +161,19 @@
             }
          }
          .slider__coupon {
-            background: url("../../assets/img/shop_slider_image.jpg") no-repeat 0 0 / 100% 100%;
             &:before {
-               background-image: url("../../assets/img/shop_slider_image.jpg");
+               background-image: url("../../assets/img/shop_slider_image2.jpg");
             }
          }
          .slider__birthday {
-            background: url("../../assets/img/shop_slider_image2.jpg") no-repeat 0 0 / 100% 100%;
             &:before {
-               background-image: url("../../assets/img/shop_slider_image2.jpg");
+               background-image: url("../../assets/img/shop_slider_image.jpg");
             }
             p.slider__item-subtitle {
                margin: 0 0 9% 0;
             }
          }
          .slider__delievery {
-            background: url("../../assets/img/shop_slider_image4.jpg") no-repeat 0 0 / 100% 100%;
             align-items: center;
             &:before {
                background-image: url("../../assets/img/shop_slider_image4.jpg");
@@ -160,11 +182,25 @@
                text-align: center;
             }
             p.slider__item-subtitle {
-               margin: 3% 0 9% 0;  
+               margin: 3% 0 9% 0;
             }
             .overlay {
                background: rgba(0, 0, 0, 0.6);
             }
+         }
+      }
+      .shop__cta {
+         display: inline-flex;
+         justify-content: center;
+         margin: 2vh auto;
+         animation: changeCircle 1.5s ease-out infinite;
+         background: $second;
+         border-radius: 100%;
+         padding: 0.5vw;
+         opacity: 0.5;
+         img {
+            width: 1.5vw;
+            height: 1.5vw;
          }
       }
    }
