@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
+import logoImage from '../../assets/img/logo.png';
+import basketImage from '../../assets/img/basket.png';
 
 const Header = () => {
    
@@ -7,10 +9,10 @@ const Header = () => {
       <header className="header">
          <nav className="header__body">
             <div className="left">
-               <img src="/img/logo.png" alt="logo" className="header__logo" />
+               <img src={logoImage} alt="logo" className="header__logo" />
                <NavLink to='basket' className="card__basket">
                   <span className="card__counter"></span>
-                  <img src="/img/basket.png" className='card__basket-icon' alt="basket" />
+                  <img src={basketImage} className='card__basket-icon' alt="basket" />
                   Кошик
                </NavLink>
             </div>

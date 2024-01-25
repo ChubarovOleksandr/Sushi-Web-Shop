@@ -1,11 +1,13 @@
 import './Intro.scss';
 import { NavLink } from 'react-router-dom';
 import { IntroSlider } from './IntroSlider';
+import Header from '../layout/Header';
 
 export const Intro: React.FC = () => {
 
    return (
       <div className='home'>
+         <Header />
          <main className='main'>
             <div className="background"></div>
             <div className="main__body">
