@@ -12,8 +12,10 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.1.0",
     "@types/axios": "^0.14.0",
+    "@types/react-redux": "^7.1.33",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3-pre.0",
     "react-slick": "^0.29.0",
     "scss": "^0.2.4",

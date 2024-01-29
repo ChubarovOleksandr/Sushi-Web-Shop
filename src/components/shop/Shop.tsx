@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-
-import './Shop.scss';
 import { ShopSlider } from './ShopSlider';
 import arrowIcon from '../../assets/img/arrow-icon.png'
 import ShopFilters from './ShopFilters';
-import { ShopAPI } from '../../api/ShopAPI';
+import { useDispatch } from 'react-redux';
+import { getItems } from '../../store/slices/itemSlice';
+import './Shop.scss';
 
 
 const Shop = () => {
-   
+   const dispatch = useDispatch();
+
    useEffect(() => {
-      ShopAPI();
-   }, [])
+      dispatch(getItems());
+   }, [dispatch])
 
    return (
       <div className='shop'>
