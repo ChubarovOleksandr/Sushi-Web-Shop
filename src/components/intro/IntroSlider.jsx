@@ -6,7 +6,7 @@ import './Intro.scss';
 
 export const IntroSlider = () => {
 
-   const introSliderRef = useRef<Slider>(null);
+   const introSliderRef = useRef(null);
 
    useEffect(() => {
       const handleVisibilityChange = () => {

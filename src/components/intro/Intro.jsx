@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { IntroSlider } from './IntroSlider';
 import Header from '../layout/Header';
 
-export const Intro: React.FC = () => {
+export const Intro = () => {
 
    return (
       <div className='home'>

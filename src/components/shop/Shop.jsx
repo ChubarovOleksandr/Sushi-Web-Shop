@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
-import { ShopSlider } from './ShopSlider';
+import './Shop.scss';
+import { ShopSlider } from './Slider';
 import arrowIcon from '../../assets/img/arrow-icon.png'
-import ShopFilters from './ShopFilters';
+import ShopFilters from './Filters';
 import { useDispatch } from 'react-redux';
 import { getItems } from '../../store/slices/itemSlice';
-import './Shop.scss';
-
 
 const Shop = () => {
    const dispatch = useDispatch();
-
+   
    useEffect(() => {
       dispatch(getItems());
    }, [dispatch])
-
+      
    return (
       <div className='shop'>
          <div className="shop__body">
