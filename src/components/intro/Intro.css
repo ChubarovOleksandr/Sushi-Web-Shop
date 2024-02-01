@@ -1,0 +1,83 @@
+.home {
+  height: 100%;
+  position: relative;
+}
+.home .main {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .main .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("src/assets/img/firstPage_image.png") 0% 23%/auto 145% no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.home .main .main__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  font-family: "Nunito Sans", sans-serif;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+.home .main .main__body .pretitle,
+.home .main .main__body .posttitle {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+}
+.home .main .main__body .pretitle {
+  align-self: flex-end;
+}
+.home .main .main__body .main__title-line {
+  display: flex;
+  position: relative;
+}
+.home .main .main__body .main__title-line .title {
+  font-size: 175px;
+  text-wrap: wrap;
+  text-align: right;
+  font-weight: 700;
+  z-index: -10;
+}
+.home .main .main__body .main__title-line .main__button {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  background: rgb(255, 255, 255);
+  color: rgb(44, 44, 44);
+  font-weight: 900;
+  font-size: 20px;
+  padding: 3% 4.5%;
+  border-radius: 25px;
+  letter-spacing: 2px;
+  transition: all 0.4s;
+}
+.home .main .main__body .main__title-line .main__button:hover {
+  transition: all 0.4s;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+.home .slick-slider {
+  z-index: -5;
+}
+.home .slick-slider .slider__item {
+  width: 250px !important;
+  text-transform: uppercase;
+  background: rgb(27, 27, 27);
+  color: rgb(126, 121, 121);
+  position: relative;
+  font-size: 16px;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 20px 0;
+  border-radius: 25px;
+  text-align: center;
+}

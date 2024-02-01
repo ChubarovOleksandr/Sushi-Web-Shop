@@ -1,0 +1,111 @@
+.header {
+  z-index: 10;
+  height: 10dvh;
+  width: 100%;
+  border-bottom: 1px solid rgb(40, 40, 40);
+}
+.header a {
+  display: inline-block;
+  position: relative;
+  color: rgb(119, 119, 119);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  overflow: hidden;
+  padding: 10px 0;
+}
+.header a:visited {
+  color: rgb(119, 119, 119);
+}
+.header a:hover {
+  color: rgb(255, 255, 255);
+  transition: color 0.4s;
+}
+.header a:hover::before {
+  width: 100%;
+  right: 50%;
+}
+.header a:hover::after {
+  width: 100%;
+  left: 50%;
+}
+.header a:before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  bottom: 0px;
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.4s ease;
+}
+.header a:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.4s ease;
+}
+.header a.active {
+  color: rgb(255, 255, 255);
+}
+.header a.active:hover:before, .header a.active:hover:after {
+  display: none;
+}
+.header .header__body {
+  width: 70%;
+  max-width: 70%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .header__body .left {
+  display: flex;
+  justify-content: space-between;
+}
+.header .header__body .left img.header__logo {
+  width: 70px;
+  height: 70px;
+}
+.header .header__body .left .card__basket {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 60px;
+  border: none;
+}
+.header .header__body .left .card__basket:after, .header .header__body .left .card__basket:before {
+  display: none;
+}
+.header .header__body .left .card__basket .card__counter {
+  position: absolute;
+  display: none;
+  left: 17%;
+  top: 50%;
+  background: rgb(141, 141, 141);
+  border-radius: 100%;
+  width: 18px;
+  height: 18px;
+}
+.header .header__body .left .card__basket .card__basket-icon {
+  width: 40px;
+  height: 35px;
+  margin: 0 5px 0 15px;
+  transition: filter 0.4s;
+}
+.header .header__body .left .card__basket:hover .card__basket-icon {
+  filter: brightness(2);
+}
+.header .header__body .right {
+  display: flex;
+  justify-content: space-between;
+}
+.header .header__body .right a {
+  margin: 0 0 0 40px;
+}
