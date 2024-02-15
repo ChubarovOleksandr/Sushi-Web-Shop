@@ -19,10 +19,11 @@
 // style
 
 body::-webkit-scrollbar {
-  width: 0;
+   width: 0;
 }
 
 .shop {
+   padding-bottom: 300px;
    .shop__body {
       width: 70%;
       margin: 0 auto;
@@ -201,6 +202,61 @@ body::-webkit-scrollbar {
          img {
             width: 1.5vw;
             height: 1.5vw;
+         }
+      }
+      .shop__filters {
+         display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         font-family: $Nunito;
+         gap: 25px;
+         span {
+            font-size: 28px;
+         }
+         .shop__categories {
+            background: $first;
+            color: $third;
+            font-weight: 900;
+            font-size: 20px;
+            border-radius: 25px;
+            letter-spacing: 1px;
+            transition: all 0.4s;
+            cursor: pointer;
+            font-weight: normal;
+            position: relative;
+            width: 150px;
+            height: 40px;
+            .shop__category--active {
+               height: 40px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               position: relative;
+            }
+            .shop__categories-list {
+               background: $third;
+               color: $first;
+               width: 150px;
+               border-radius: 25px;
+               position: absolute;
+               top: 120%;
+               left: 0;
+               .shop__categories-item {
+                  text-align: center;
+                  padding: 10px 0;
+                  &:hover {
+                     border-radius: 25px;
+                     background: $second;
+                     transition: background .4s;
+                  }
+               }
+            }
+         }
+         .shop__sortBy {
+            .shop__sortBy-list {
+               .shop__sortBy-item {
+               }
+            }
          }
       }
    }

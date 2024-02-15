@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './Shop.scss';
 import { NavLink } from 'react-router-dom';
 
-export const ShopSlider = () => {
+const ShopSlider = () => {
 
    const settings = {
       dots: true,
@@ -47,3 +47,5 @@ export const ShopSlider = () => {
       </Slider>
    )
 }
+
+export default ShopSlider;

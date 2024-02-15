@@ -1,11 +1,14 @@
 import { Categories } from './Categories'
+import { SortBy } from './sortBy';
 
-const ShopFilters = () => {
+const Filters = () => {
    return ( 
       <div className="shop__filters">
+         <span>Сортувати за:</span>         
          <Categories />
+         <SortBy />
       </div>
     );
 }
  
-export default ShopFilters;
+export default Filters;
