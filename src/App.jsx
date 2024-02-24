@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
 import { Intro } from './components/intro/Intro'
 import Shop from './components/shop/Shop'
-import Layout from './components/layout/Layout'
+import Layout from './layouts/Layout'
 import Favorites from './components/favorites/Favotires'
 import Info from './components/info/Info'
 

@@ -210,92 +210,97 @@ body::-webkit-scrollbar {
             height: 1.5vw;
          }
       }
-      .shop__filters {
-         display: flex;
-         justify-content: flex-start;
-         align-items: center;
-         font-family: $Nunito;
-         gap: 25px;
-         margin-top: 5vh;
-         span {
-            font-size: 28px;
-         }
-         .shop__categories {
-            background: $first;
-            color: $third;
-            font-weight: 900;
-            font-size: 20px;
-            border-radius: 25px;
-            letter-spacing: 1px;
-            transition: all 0.4s;
-            cursor: pointer;
-            font-weight: normal;
-            position: relative;
-            width: 150px;
-            height: 40px;
-            .shop__category--active {
-               height: 40px;
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               position: relative;
+      .filters {
+         z-index: 5;
+         .shop__filters {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-family: $Nunito;
+            gap: 25px;
+            margin-top: 5vh;
+            span {
+               font-size: 28px;
             }
-            .shop__categories-list {
+            .shop__categories {
                background: $third;
                color: $first;
-               width: 150px;
+               font-weight: 900;
+               font-size: 20px;
                border-radius: 25px;
-               position: absolute;
-               top: 120%;
-               left: 0;
-               .shop__categories-item {
-                  text-align: center;
-                  padding: 13px 0;
-                  &:hover {
-                     border-radius: 25px;
-                     background: $second;
-                     transition: background 0.4s;
+               letter-spacing: 1px;
+               transition: all 0.4s;
+               cursor: pointer;
+               font-weight: normal;
+               position: relative;
+               width: 150px;
+               height: 40px;
+               .shop__category--active {
+                  height: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  position: relative;
+               }
+               .shop__categories-list {
+                  background: $third;
+                  color: $first;
+                  width: 150px;
+                  border-radius: 25px;
+                  position: absolute;
+                  top: 120%;
+                  left: 0;
+                  .shop__categories-item {
+                     text-align: center;
+                     padding: 13px 0;
+                     color: rgba(255, 255 ,255, 0.75);
+                     &:hover {
+                        border-radius: 25px;
+                        background: $second;
+                        transition: background 0.4s;
+                     }
                   }
                }
             }
-         }
-         .shop__sortBy {
-            background: $first;
-            color: $third;
-            font-weight: 900;
-            font-size: 20px;
-            border-radius: 25px;
-            letter-spacing: 1px;
-            transition: all 0.4s;
-            cursor: pointer;
-            font-weight: normal;
-            position: relative;
-            width: 240px;
-            height: 40px;
-            .shop__sortBy--active {
-               height: 40px;
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               position: relative;
-            }
-            .shop__sortBy-list {
+            .shop__sortBy {
                background: $third;
                color: $first;
-               width: 240px;
+               font-weight: 900;
+               font-size: 20px;
                border-radius: 25px;
-               position: absolute;
-               top: 120%;
-               left: 0;
-               .shop__sortBy-item {
-                  text-align: center;
-                  padding: 13px 0;
-                  transition: background 0.2s;
+               letter-spacing: 1px;
+               transition: all 0.4s;
+               cursor: pointer;
+               font-weight: normal;
+               position: relative;
+               width: 240px;
+               height: 40px;
+               .shop__sortBy--active {
+                  height: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  position: relative;
+               }
+               .shop__sortBy-list {
+                  background: $third;
+                  color: $first;
+                  width: 240px;
                   border-radius: 25px;
-                  &:hover {
+                  position: absolute;
+                  top: 120%;
+                  left: 0;
+                  .shop__sortBy-item {
+                     text-align: center;
+                     padding: 13px 0;
+                     transition: background 0.2s;
                      border-radius: 25px;
-                     background: $second;
-                     transition: background 0.4s;
+                     color: rgba(255, 255 ,255, 0.75);
+                     &:hover {
+                        border-radius: 25px;
+                        background: $second;
+                        transition: background 0.4s;
+                     }
                   }
                }
             }
@@ -303,6 +308,7 @@ body::-webkit-scrollbar {
       }
       .items {
          margin-top: 80px;
+         z-index: 1;
          .items__body {
             display: flex;
             flex-wrap: wrap;
@@ -325,6 +331,29 @@ body::-webkit-scrollbar {
                }
                .item__header {
                   margin-bottom: 10px;
+                  position: relative;
+                  .item__save {
+                     background: $second;
+                     border-radius: 100%;
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
+                     position: absolute;
+                     top: 5px;
+                     right: 5px;
+                     width: 40px;
+                     height: 40px;
+                     &:hover {
+                        img {
+                           transform: scale(1.08);
+                           transition: all .3;
+                        }
+                     }
+                     img.save-image {
+                        background: none;
+                        transition: all .3s;
+                     }
+                  }
                   .item__image {
                      overflow: hidden;
                      img {

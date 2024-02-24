@@ -1,4 +1,4 @@
-import './Favorites.scss';
+import '../../scss/components/_Favorites.scss';
 
 const Favorites = () => {
    return ( null );

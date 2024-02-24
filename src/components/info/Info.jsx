@@ -1,4 +1,4 @@
-import './Info.scss';
+import '../../scss/components/_Info.scss';
 
 const Info = () => {
    return ( null );

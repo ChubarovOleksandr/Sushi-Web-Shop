@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeCategoryId } from '../../store/slices/filterSlice';
+import { changeCategoryId } from '../../redux/slices/filterSlice';
 
 
 export const Categories = () => {
@@ -9,7 +9,6 @@ export const Categories = () => {
    const [isOpen, setIsOpen] = useState(false);
    const categoriesRef = useRef();
    const dispatch = useDispatch();
-
    const categories = ['Усi', 'Сети', 'Роли'];
 
    useEffect(() => {
@@ -18,7 +17,7 @@ export const Categories = () => {
             setIsOpen(false);
          }
       }
-      
+
       document.addEventListener('click', toggleIsOpened);
 
       return () => {
@@ -28,7 +27,7 @@ export const Categories = () => {
 
    const setCategoryId = (id) => {
       setActiveIndex(id);
-      dispatch(changeCategoryId({id}));
+      dispatch(changeCategoryId({ id }));
    }
 
    return (

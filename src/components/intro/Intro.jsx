@@ -1,7 +1,7 @@
-import './Intro.scss';
+import '../../scss/components/_Intro.scss';
 import { NavLink } from 'react-router-dom';
 import { IntroSlider } from './IntroSlider';
-import Header from '../layout/Header';
+import Header from '../header/Header';
 
 export const Intro = () => {
 

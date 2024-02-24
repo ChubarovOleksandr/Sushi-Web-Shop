@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeSortBy } from '../../store/slices/filterSlice';
+import { changeSortBy } from '../../redux/slices/filterSlice';
 
 
 export const SortBy = () => {

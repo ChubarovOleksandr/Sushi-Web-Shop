@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './Shop.scss';
+import '../../scss/components/_Shop.scss';
 import { NavLink } from 'react-router-dom';
 
 const ShopSlider = () => {

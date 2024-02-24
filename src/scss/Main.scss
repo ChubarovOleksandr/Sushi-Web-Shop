@@ -1,0 +1,16 @@
+// import
+
+@import '../src/assets/styles/variables';
+
+// style
+
+body {
+   background: $bg;
+}
+#root {
+   height: 100%;
+}
+.wrapper {
+   height: 100%;
+   color: #fff;
+}
