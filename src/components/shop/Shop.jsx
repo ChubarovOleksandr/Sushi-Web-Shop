@@ -8,17 +8,24 @@ import { getItems } from '../../redux/slices/itemSlice';
 import Item from './Item';
 import { useSelector } from 'react-redux';
 import ItemsLoader from '../preloader/Preloader';
+import { useSearchParams } from 'react-router-dom';
 
 const Shop = () => {
    const dispatch = useDispatch();
    const filtersRef = useRef();
    const items = useSelector(state => state.items.items);
    const isLoadingRef = useRef(true);
+   const [searchParams] = useSearchParams();
 
+   
    useEffect(() => {
-      dispatch(getItems());
-   }, [dispatch])
-
+      let searchParamsArr = [];
+      for (let [name, value] of searchParams) {
+         searchParamsArr.push(`${name}=${value}`);
+      }
+      dispatch(getItems(searchParamsArr));
+   }, [dispatch, searchParams])
+   
    useEffect(() => {
       isLoadingRef.current = false;
    }, [])

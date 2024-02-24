@@ -7,8 +7,8 @@ const initialState = {
 
 export const getItems = createAsyncThunk(
    'itemSlice/getItems',
-   async function() {
-      const response = await getItemsAPI();      
+   async function (params) {
+      const response = await getItemsAPI(params);      
       return response;
    }
 )

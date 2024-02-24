@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { changeCategoryId } from '../../redux/slices/filterSlice';
-
+import { useSearchParams } from 'react-router-dom';
 
 export const Categories = () => {
 
    const [activeIndex, setActiveIndex] = useState(-1);
    const [isOpen, setIsOpen] = useState(false);
    const categoriesRef = useRef();
-   const dispatch = useDispatch();
+   const [searchParams, setSearchParams] = useSearchParams();
    const categories = ['Усi', 'Сети', 'Роли'];
 
    useEffect(() => {
@@ -25,9 +23,24 @@ export const Categories = () => {
       }
    }, [isOpen]);
 
+   useEffect(() => { // if we have already params in url, change textContent of button to current selected [categories] item
+      if (searchParams != 0) {
+         const urlParam = searchParams.get('category');
+         if(urlParam){
+            setActiveIndex(urlParam)
+         }
+      }
+   }, [])
+
    const setCategoryId = (id) => {
+      let newSearchParams = new URLSearchParams(searchParams); 
+      if(id === 0){
+         newSearchParams.delete('category');
+      } else {
+         newSearchParams.set('category', id);
+      }
+      setSearchParams(newSearchParams);
       setActiveIndex(id);
-      dispatch(changeCategoryId({ id }));
    }
 
    return (
