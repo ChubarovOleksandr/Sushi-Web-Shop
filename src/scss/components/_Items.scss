@@ -1,3 +1,41 @@
+@keyframes addToCart {
+   100% {
+      width: 70px;
+      border-radius: 100%;
+   }
+   87% {
+      width: 75px;
+      border-radius: 87%;
+   }
+   75% {
+      width: 80px;
+      border-radius: 75%;
+   }
+   67% {
+      width: 85px;
+      border-radius: 67%;
+   }
+   50% {
+      width: 90px;
+      border-radius: 50%;
+   }
+   37% {
+      width: 95px;
+      border-radius: 3px;
+   }
+   25% {
+      width: 100px;
+   }
+   12% {
+      width: 105px;
+   }
+   0% {
+      width: 110px;
+   }
+}
+
+// imports
+
 @import "../variables.scss";
 
 .items {
@@ -64,12 +102,12 @@
                font-size: 1.5rem;
                font-family: $Roboto;
                font-weight: 400;
-               transition: all .4s;
+               transition: all 0.4s;
             }
             .item__name.hiding {
                transform: translate(0, 50%);
                opacity: 0;
-               transition: all .4s;
+               transition: all 0.4s;
             }
             .item__components {
                position: absolute;
@@ -83,14 +121,15 @@
                width: 100%;
                background: rgba(0, 0, 0, 0.7);
                overflow: hidden;
-               transition: all .3s;
+               transition: background 0.4s;
+               transition: opacity 0.4s;
                p {
                   text-align: center;
                   font-size: 1.4rem;
                   font-family: $Roboto;
                   font-weight: 400;
                   opacity: 1;
-                  transition: all .5s;
+                  transition: all 0.5s;
                   transform: translate(0, 0);
                   &:hover {
                      cursor: default;
@@ -99,7 +138,7 @@
             }
             .item__components.hide {
                opacity: 0;
-               transition: all .5s;
+               transition: all 0.5s;
                p {
                   opacity: 0;
                }
@@ -173,6 +212,7 @@
                   padding: 10px 25px;
                   border-radius: 3px;
                   transition: all 0.3s;
+                  overflow: hidden;
                   &:hover {
                      transition: all 0.3s;
                      span {
@@ -188,7 +228,62 @@
                      font-weight: 400;
                      color: $sixth;
                   }
+                  span.item__add-button-text {
+                     height: 20px;
+                     display: block;
+                  }
+                  span.item__add-button-text.hide {
+                     transition:
+                        transform 0.3s ease,
+                        opacity 0.3s ease;
+                     transform: translate(0, -100%);
+                     opacity: 0;
+                  }
+                  span.item__add-button-image img {
+                     height: 20px;
+                     width: 20px;
+                  }
+                  span.item__add-button-image.hide {
+                     transition: all 0.7s;
+                  }
                }
+               .item__add-button:has(span.item__add-button-text.hide) {
+                  transition: all 4s;
+                  animation: addToCart .7s;
+               }
+               .item__add-button:has(span.item__add-button-image img) {
+                  border-radius: 100%;
+               }
+            }
+         }
+      }
+      .item__empty {
+         display: flex;
+         margin: 0 auto;
+         justify-content: center;
+         flex-direction: column;
+         align-items: center;
+         .item__empty-block {
+            width: auto;
+            margin: 40px auto;
+            text-align: center;
+            font-size: 58px;
+            font-family: $Nunito;
+            color: $first;
+            background: $third;
+            padding: 25px;
+            border-radius: 15px;
+            span {
+               color: $sixth;
+            }
+         }
+         .item__empty-arrow {
+            height: 55px;
+            width: 55px;
+            transition: all 0.3s;
+            &:hover {
+               transform: scale(1.1);
+               transition: all 0.3s;
             }
          }
       }

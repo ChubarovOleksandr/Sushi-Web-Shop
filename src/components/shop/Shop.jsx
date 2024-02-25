@@ -6,7 +6,7 @@ import arrowIcon from '../../assets/img/arrow-icon.png'
 import Filters from './Filters';
 import { useDispatch } from 'react-redux';
 import { getItems } from '../../redux/slices/itemSlice';
-import Item from './Item';
+import Item from '../item/Item';
 import { useSelector } from 'react-redux';
 import ItemsLoader from '../preloader/Preloader';
 import { useSearchParams } from 'react-router-dom';

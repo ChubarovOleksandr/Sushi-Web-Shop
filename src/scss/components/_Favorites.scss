@@ -30,6 +30,7 @@
       flex-direction: column;
       .favorites__title {
          display: flex;
+         justify-content: center;
          align-items: center;
          font-family: $Nunito;
          font-size: 48px;

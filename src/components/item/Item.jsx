@@ -4,33 +4,35 @@ import heartFill from '../../assets/img/heart-fill.png';
 import { saveInFavorite, removeFromFavorite } from '../../redux/slices/favoriteSlice';
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
+import checkmark from '../../assets/img/checkmark.png';
 
 const Item = ({ item, isSaved }) => {
 
    const itemName = useRef();
    const imageRef = useRef();
+   const addBtnImage = useRef();
+   const addBtnText = useRef();
    const componentsRef = useRef();
    const [saved, setSaved] = useState(isSaved != true ? false : true);
    const [isHover, setIsHover] = useState(false);
    const [imageHeight, setImageHeight] = useState(0);
+   const [inCart, setInCart] = useState(false);
    const dispatch = useDispatch();
 
-   if (isHover) {
-      if (imageHeight < 10) {
-         setImageHeight(imageRef.current.clientHeight);
-      }
-      itemName.current.classList.add('hiding')
-      componentsRef.current.classList.remove('hide');
-   } else if (itemName.current != undefined) {
-      componentsRef.current.classList.add('hide');
-      itemName.current.classList.remove('hiding')
-   }
+   useEffect(() => {
+      setImageHeight(imageRef.current.clientHeight);
+   }, [])
 
    useEffect(() => {
-      if(imageRef.current != undefined){
+      if (isHover) {
          setImageHeight(imageRef.current.clientHeight);
+         itemName.current.classList.add('hiding');
+         componentsRef.current.classList.remove('hide');
+      } else if (itemName.current != undefined) {
+         itemName.current.classList.remove('hiding');
+         componentsRef.current.classList.add('hide');
       }
-   }, []);
+   }, [isHover]);
 
    const addToFavorite = () => {
       if (saved) {
@@ -40,6 +42,18 @@ const Item = ({ item, isSaved }) => {
       }
       setSaved(!saved);
    }
+
+   /* const changeInCartStatus = () => {
+      if(!inCart){
+         addBtnText.current.classList.add('hide');
+      } else {
+         addBtnImage.current.classList.add('hide');
+      }
+      setTimeout(() => {
+         // inCart ? addBtnText.current.classList.remove('hide') : addBtnImage.current.classList.remove('hide');
+         setInCart(!inCart);
+      }, 700);
+   } */
 
    return (
       <div className="item__block" onMouseOver={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
@@ -68,8 +82,13 @@ const Item = ({ item, isSaved }) => {
                </div>
             </div>
             <div className="item__footer">
-               <button className="item__add-button">
-                  <span>В корзину</span>
+               <button /* onClick={changeInCartStatus} */ className="item__add-button">
+                  {/* {inCart ?
+                     <span ref={addBtnImage} className='item__add-button-image'><img src={checkmark} alt="checkmark" /></span>
+                     :
+                     <span ref={addBtnText} className='item__add-button-text'>В корзину</span>
+                  } */}
+                  <span ref={addBtnText} className='item__add-button-text'>В корзину</span>
                </button>
             </div>
          </div>
