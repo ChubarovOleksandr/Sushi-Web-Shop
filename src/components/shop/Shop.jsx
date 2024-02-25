@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import '../../scss/components/_Shop.scss';
+import '../../scss/components/_Items.scss';
 import Slider from './Slider';
 import arrowIcon from '../../assets/img/arrow-icon.png'
 import Filters from './Filters';
