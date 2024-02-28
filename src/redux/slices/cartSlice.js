@@ -20,3 +20,5 @@ export const cartSlice = createSlice({
       },
    }
 });
+
+export const { saveInCart, removeFromCart } = cartSlice.actions; 

@@ -2,8 +2,11 @@ import { NavLink } from 'react-router-dom';
 import '../../scss/components/_Header.scss'
 import logoImage from '../../assets/img/logo.png';
 import basketImage from '../../assets/img/basket.png';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+
+   const cartItems = useSelector(state => state.cart.items);
    
    return (
       <header className="header">
@@ -11,7 +14,7 @@ const Header = () => {
             <div className="left">
                <img src={logoImage} alt="logo" className="header__logo" />
                <NavLink to='basket' className="card__basket">
-                  <span className="card__counter"></span>
+                  <span className="card__counter">{cartItems.length}</span>
                   <img src={basketImage} className='card__basket-icon' alt="basket" />
                   Кошик
                </NavLink>

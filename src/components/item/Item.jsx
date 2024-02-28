@@ -5,6 +5,7 @@ import { saveInFavorite, removeFromFavorite } from '../../redux/slices/favoriteS
 import { useDispatch } from 'react-redux';
 import { useRef } from 'react';
 import checkmark from '../../assets/img/checkmark.png';
+import { removeFromCart, saveInCart } from '../../redux/slices/cartSlice';
 
 const Item = ({ item, isSaved }) => {
 
@@ -43,6 +44,16 @@ const Item = ({ item, isSaved }) => {
       setSaved(!saved);
    }
 
+
+   const addToCart = () => {
+      if (inCart) {
+         dispatch(removeFromCart(item));
+      } else {
+         dispatch(saveInCart(item));
+      }
+      setInCart(!inCart);
+   }
+
    return (
       <div className="item__block" onMouseOver={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
          <div className="item__wrapper">
@@ -71,7 +82,7 @@ const Item = ({ item, isSaved }) => {
                   </div>
                </div>
                <div className="item__footer">
-                  <button onClick={() => setInCart(!inCart)} className="item__add-button">
+                  <button onClick={() => addToCart()} className="item__add-button">
                      {inCart ?
                         <span ref={addBtnImage} className='item__add-button-image'><img src={checkmark} alt="checkmark" /></span>
                         :

@@ -19,6 +19,7 @@
       text-transform: uppercase;
       overflow: hidden;
       padding: 10px 0;
+      z-index: 1;
       &:visited {
          color: $second;
       }
@@ -91,13 +92,19 @@
             }
             .card__counter {
                position: absolute;
-               display: none;
-               left: 17%;
-               top: 50%;
-               background: rgb(141, 141, 141);
+               display: block;
+               left: 28%;
+               bottom: 15%;
+               background: rgb(105, 105, 105);
                border-radius: 100%;
                width: 18px;
                height: 18px;
+               color: $first;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               font-size: 12px;
+               z-index: 5;
             }
             .card__basket-icon {
                width: 40px;
