@@ -15,10 +15,10 @@ const Shop = () => {
    const dispatch = useDispatch();
    const filtersRef = useRef();
    const items = useSelector(state => state.items.items);
+   const favoriteItems = useSelector(state => state.favorite.items);
    const isLoadingRef = useRef(true);
    const [searchParams] = useSearchParams();
 
-   
    useEffect(() => {
       let searchParamsArr = [];
       for (let [name, value] of searchParams) {
@@ -26,7 +26,7 @@ const Shop = () => {
       }
       dispatch(getItems(searchParamsArr));
    }, [dispatch, searchParams])
-   
+
    useEffect(() => {
       isLoadingRef.current = false;
    }, [])
@@ -50,7 +50,9 @@ const Shop = () => {
                   {isLoadingRef.current ?
                      <ItemsLoader />
                      :
-                     items.map(itemData => <Item key={itemData.id} item={itemData} />)
+                     items.map(itemData => (
+                        <Item key={itemData.id} item={itemData} isSaved={favoriteItems.some(favoriteItem => favoriteItem.id === itemData.id)}/>
+                     ))
                   }
                </div>
             </div>
