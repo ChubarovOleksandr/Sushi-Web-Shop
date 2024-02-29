@@ -118,6 +118,11 @@
                }
             }
          }
+         .card__basket.active {
+            .card__basket-icon {
+               filter: brightness(2);
+            }
+         }
       }
       .right {
          display: flex;

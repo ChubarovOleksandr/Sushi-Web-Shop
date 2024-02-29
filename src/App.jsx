@@ -4,6 +4,7 @@ import Shop from './components/shop/Shop'
 import Layout from './layouts/Layout'
 import Favorites from './components/favorites/Favotires'
 import Info from './components/info/Info'
+import Basket from './components/basket/Basket'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
          <Routes>
             <Route index element={<Intro />} /> {/* не вложен в layout для корректного отображения верстки по дизайну */}
             <Route path='/' element={<Layout />}>
+               <Route path='basket' element={<Basket />} />
                <Route path='shop' element={<Shop />} />
                <Route path='favorites' element={<Favorites />} />
                <Route path='info' element={<Info />} />
