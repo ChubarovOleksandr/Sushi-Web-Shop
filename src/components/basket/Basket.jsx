@@ -5,12 +5,35 @@ import emptyBin from '../../assets/img/empty-bin.png';
 import { useSelector } from 'react-redux';
 import ItemList from '../item/ItemList';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeFromCart } from '../../redux/slices/cartSlice';
 
 const Basket = () => {
 
    const cartItems = useSelector(state => state.cart.items);
-   const [totalPrice, setTotalPrice] = useState(1);
+   const [totalPrice, setTotalPrice] = useState(0);
+   const dispatch = useDispatch();
+
+   useEffect(() => {
+      let newTotalPrice = 0;
+      cartItems.forEach(item => {
+         const price = item.discount !== 0 ? item.discount : item.price;
+         newTotalPrice += price;
+      });
+      setTotalPrice(newTotalPrice)
+   }, [cartItems])
+
+   const changeTotalPrice = (isIncrease, value) => {
+      setTotalPrice((prevTotalPrice) => {
+         const newTotalPrice = isIncrease ? prevTotalPrice + value : Math.max(prevTotalPrice - value, 0);
+         return newTotalPrice;
+      });
+   };
+
+   const removeAllItems = () => {
+      cartItems.forEach(item => dispatch(removeFromCart(item)));
+   }
 
    return (
       <div className="basket">
@@ -23,14 +46,14 @@ const Basket = () => {
                         <span>Ваш кошик</span>
                      </div>
                      <div className="basket__header-right">
-                        <button className="basket__header-button">
+                        <button className="basket__header-button" onClick={()=> removeAllItems()}>
                            <img src={trash} alt="trash" />
                            Очистити кошик
                         </button>
                      </div>
                   </div>
                   <div className="basket__body">
-                     {cartItems.map(itemData => <ItemList key={itemData.id} item={itemData} />)}
+                     {cartItems.map(itemData => <ItemList key={itemData.id} item={itemData} changeTotalPrice={changeTotalPrice} />)}
                   </div>
                   <div className="basket__footer">
                      <div className="basket__total-price">

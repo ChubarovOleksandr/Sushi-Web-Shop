@@ -7,7 +7,7 @@ import { useRef } from 'react';
 import checkmark from '../../assets/img/checkmark.png';
 import { removeFromCart, saveInCart } from '../../redux/slices/cartSlice';
 
-const Item = ({ item, isSaved }) => {
+const Item = ({ item, isSaved, isInCart }) => {
 
    const itemName = useRef();
    const imageRef = useRef();
@@ -17,7 +17,7 @@ const Item = ({ item, isSaved }) => {
    const [saved, setSaved] = useState(!!isSaved);
    const [isHover, setIsHover] = useState(false);
    const [imageHeight, setImageHeight] = useState(0);
-   const [inCart, setInCart] = useState(false);
+   const [inCart, setInCart] = useState(isInCart);
    const dispatch = useDispatch();
 
    useEffect(() => {

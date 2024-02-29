@@ -1,22 +1,28 @@
 import '../../scss/components/_ItemList.scss';
 import remove from '../../assets/img/close.png';
 import { useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeFromCart } from '../../redux/slices/cartSlice';
 
-const ItemList = ({ item }) => {
+const ItemList = ({ item, changeTotalPrice }) => {
 
    const price = item.discount != 0 ? item.discount : item.price
    const minusBtnRef = useRef();
+   const dispatch = useDispatch();
    const [totalPrice, setTotalPrice] = useState(price)
    let [counter, setCounter] = useState(1);
+   
 
    const changePrice = (number) => {
 
       if (number > totalPrice) {
          setCounter(++counter);
+         changeTotalPrice(true, price)
       } else if(counter != 1){
          setCounter(--counter);
+         changeTotalPrice(false, price)
       }
-
+      
       if (number == price || number < price) {
          minusBtnRef.current.classList.add('disabled');
          setTotalPrice(price);
@@ -41,7 +47,7 @@ const ItemList = ({ item }) => {
             <span className="item__price-value">{totalPrice}</span>
          </div>
          <div className="item__remove">
-            <button className="item__remove-button">
+            <button className="item__remove-button" onClick={() => dispatch(removeFromCart(item))}>
                <img src={remove} alt="delete" />
             </button>
          </div>

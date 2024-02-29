@@ -16,6 +16,7 @@ const Shop = () => {
    const filtersRef = useRef();
    const items = useSelector(state => state.items.items);
    const favoriteItems = useSelector(state => state.favorite.items);
+   const cartItems = useSelector(state => state.cart.items);
    const isLoadingRef = useRef(true);
    const [searchParams] = useSearchParams();
 
@@ -51,7 +52,9 @@ const Shop = () => {
                      <ItemsLoader />
                      :
                      items.map(itemData => (
-                        <Item key={itemData.id} item={itemData} isSaved={favoriteItems.some(favoriteItem => favoriteItem.id === itemData.id)}/>
+                        <Item key={itemData.id} item={itemData}
+                           isSaved={favoriteItems.some(favoriteItem => favoriteItem.id === itemData.id)}
+                           isInCart={cartItems.some(inCart => inCart.id === itemData.id)}/>
                      ))
                   }
                </div>
