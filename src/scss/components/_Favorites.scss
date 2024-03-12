@@ -30,12 +30,13 @@
       flex-direction: column;
       .favorites__title {
          display: flex;
-         justify-content: center;
          align-items: center;
+         justify-content: center;
+         padding-bottom: 20px;
          font-family: $Nunito;
          font-size: 48px;
          color: $first;
-         margin: 70px 0;
+         margin: 70px auto;
          .favorites__image-block {
             background: rgba(119, 119, 119, 0.7);
             border-radius: 100%;

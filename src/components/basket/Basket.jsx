@@ -5,34 +5,18 @@ import emptyBin from '../../assets/img/empty-bin.png';
 import { useSelector } from 'react-redux';
 import ItemList from '../item/ItemList';
 import { NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeFromCart } from '../../redux/slices/cartSlice';
+import { removeFromCart, changeTotalPrice } from '../../redux/slices/cartSlice';
 
 const Basket = () => {
 
    const cartItems = useSelector(state => state.cart.items);
-   const [totalPrice, setTotalPrice] = useState(0);
+   const totalPrice = useSelector(state => state.cart.totalPrice);
    const dispatch = useDispatch();
-
-   useEffect(() => {
-      let newTotalPrice = 0;
-      cartItems.forEach(item => {
-         const price = item.discount !== 0 ? item.discount : item.price;
-         newTotalPrice += price;
-      });
-      setTotalPrice(newTotalPrice)
-   }, [cartItems])
-
-   const changeTotalPrice = (isIncrease, value) => {
-      setTotalPrice((prevTotalPrice) => {
-         const newTotalPrice = isIncrease ? prevTotalPrice + value : Math.max(prevTotalPrice - value, 0);
-         return newTotalPrice;
-      });
-   };
 
    const removeAllItems = () => {
       cartItems.forEach(item => dispatch(removeFromCart(item)));
+      dispatch(changeTotalPrice({isIncrease: false, value: totalPrice}));
    }
 
    return (
@@ -53,7 +37,7 @@ const Basket = () => {
                      </div>
                   </div>
                   <div className="basket__body">
-                     {cartItems.map(itemData => <ItemList key={itemData.id} item={itemData} changeTotalPrice={changeTotalPrice} />)}
+                     {cartItems.map(itemData => <ItemList key={itemData.id} item={itemData} />)}
                   </div>
                   <div className="basket__footer">
                      <div className="basket__total-price">

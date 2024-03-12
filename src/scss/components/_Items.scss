@@ -210,6 +210,18 @@
          justify-content: center;
          flex-direction: column;
          align-items: center;
+         position: relative;
+         &:before {
+            position: absolute;
+            top: 0;
+            height: 1px;
+            width: 5vw;
+            border-radius: 1px;
+            background: $fourth;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            content: '';
+         }
          .item__empty-block {
             width: auto;
             margin: 40px auto;
@@ -217,7 +229,6 @@
             font-size: 58px;
             font-family: $Nunito;
             color: $first;
-            background: $third;
             padding: 25px;
             border-radius: 15px;
             span {
@@ -225,8 +236,11 @@
             }
          }
          .item__empty-arrow {
-            height: 55px;
-            width: 55px;
+            background: $third;
+            padding: 15px;
+            border-radius: 100%;
+            height: 75px;
+            width: 75px;
             transition: all 0.3s;
             &:hover {
                transform: scale(1.1);
