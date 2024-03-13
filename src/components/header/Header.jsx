@@ -3,11 +3,19 @@ import '../../scss/components/_Header.scss'
 import logoImage from '../../assets/img/logo.png';
 import basketImage from '../../assets/img/basket.png';
 import { useSelector } from 'react-redux';
+import { useRef } from 'react';
 
 const Header = () => {
 
    const cartItems = useSelector(state => state.cart.items);
-   
+   const isMounted = useRef(false);
+
+   if (isMounted.current) {
+      const json = JSON.stringify(cartItems)
+      localStorage.setItem('cart', json);
+   }
+   isMounted.current = true;
+
    return (
       <header className="header">
          <nav className="header__body">

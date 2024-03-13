@@ -9,9 +9,9 @@ import { useDispatch } from 'react-redux';
 import { removeFromCart, changeTotalPrice } from '../../redux/slices/cartSlice';
 
 const Basket = () => {
+   
+   const { totalPrice, items: cartItems } = useSelector(state => state.cart);
 
-   const cartItems = useSelector(state => state.cart.items);
-   const totalPrice = useSelector(state => state.cart.totalPrice);
    const dispatch = useDispatch();
 
    const removeAllItems = () => {

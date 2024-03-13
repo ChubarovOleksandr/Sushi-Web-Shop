@@ -19,7 +19,7 @@ const Shop = () => {
    const cartItems = useSelector(state => state.cart.items);
    const isLoadingRef = useRef(true);
    const [searchParams] = useSearchParams();
-
+      
    useEffect(() => {
       let searchParamsArr = [];
       for (let [name, value] of searchParams) {
@@ -31,6 +31,7 @@ const Shop = () => {
    useEffect(() => {
       isLoadingRef.current = false;
    }, [])
+
 
    const ctaHandler = () => {
       filtersRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -54,7 +55,7 @@ const Shop = () => {
                      items.map(itemData => (
                         <Item key={itemData.id} item={itemData}
                            isSaved={favoriteItems.some(favoriteItem => favoriteItem.id === itemData.id)}
-                           isInCart={cartItems.some(inCart => inCart.id === itemData.id)}/>
+                           isInCart={cartItems.some(inCart => inCart.id === itemData.id)} />
                      ))
                   }
                </div>

@@ -1,34 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getCartFromLS } from "../../utils/getCartFromLS";
 
-const initialState = {
-   totalPrice: 0,
-   items: [
-      /* {
-         name: 'СЕТ ГУРМАН',
-         price: 899,
-         imageUrl: "https://cdn.sushi-master.ua/sm-ua/products/0001-set-gurman-new.png?alt=media&token=0a74f9cd-439c-4a21-a02e-6541a0d575a9}&w=991&h=700&format=auto&mode=fit&q=60",
-         weight: 880,
-         description: 'Ласкаво просимо у світ витонченого гастрономічного… Каліфорнія з лососем у кунжуті та Макі з тунцем.',
-         category: 1,
-         components: "Філадельфія з лососем",
-         discount: 699,
-         id: "1",
-         selected: 1,
-      },
-      {
-         name: 'СЕТ ГУРМАН',
-         price: 899,
-         imageUrl: "https://cdn.sushi-master.ua/sm-ua/products/0001-set-gurman-new.png?alt=media&token=0a74f9cd-439c-4a21-a02e-6541a0d575a9}&w=991&h=700&format=auto&mode=fit&q=60",
-         weight: 880,
-         description: 'Ласкаво просимо у світ витонченого гастрономічного… Каліфорнія з лососем у кунжуті та Макі з тунцем.',
-         category: 1,
-         components: "Філадельфія з лососем",
-         discount: 699,
-         id: "2",
-         selected: 1,
-      }, */
-   ]
-}
+const initialState = getCartFromLS();
 
 export const cartSlice = createSlice({
    name: 'cartSlice',
@@ -41,7 +14,7 @@ export const cartSlice = createSlice({
       },
       removeFromCart(state, action) {
          state.items.map((item, index) => {
-            if (JSON.stringify(action.payload) == JSON.stringify(item)) {
+            if (JSON.stringify(action.payload.id) == JSON.stringify(item.id)) {
                state.items.splice(index, 1);
             }
          })

@@ -36,21 +36,18 @@ const Item = ({ item, isSaved, isInCart }) => {
    }, [isHover]);
 
    const addToFavorite = () => {
-      if (saved) {
+      saved ?
          dispatch(removeFromFavorite(item))
-      } else {
+         :
          dispatch(saveInFavorite(item));
-      }
       setSaved(!saved);
    }
 
-
    const addToCart = () => {
-      if (inCart) {
-         dispatch(removeFromCart(item));
-      } else {
+      inCart ?
+         dispatch(removeFromCart(item))
+         :
          dispatch(saveInCart(item));
-      }
       setInCart(!inCart);
    }
 
