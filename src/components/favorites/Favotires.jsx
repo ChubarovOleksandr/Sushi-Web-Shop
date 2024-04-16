@@ -18,7 +18,7 @@ const Favorites = () => {
                <div className="favorites__image-block">
                   <img src={heartFill} alt="heart" />
                </div>
-               Перегляньте, що ви обирали
+               <h1>Перегляньте, що ви обирали</h1>
             </div>
             <div className="items">
                <div className="items__body">
