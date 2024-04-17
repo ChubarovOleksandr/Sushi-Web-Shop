@@ -24,7 +24,72 @@
          height: 60px;
          font-size: 44px;
       }
-      h1 {
+   }
+   .accordion {
+      max-width: 1200px;
+      margin: 0 auto;
+      font-family: $Nunito;
+      font-size: 18px;
+      .accordion__item.active {
+         background-color: $eight;
+         transition: all 0.4s;
+         .accordion__content {
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            transition: max-height 0.4s;
+            border: 1px solid $eight;
+            padding: 15px 30px;
+         }
+         .accordion__button:after {
+            content: "-";
+            font-size: 26px;
+         }
+      }
+      .accordion__item {
+         display: block;
+         width: 100%;
+         background-color: $third;
+         border-radius: 30px;
+         transition: all 0.4s;
+         &:hover {
+            transition: background-color 0.2s;
+            transition: all 0.15s;
+            background-color: $eight;
+         }
+         .accordion__button {
+            position: relative;
+            color: $first;
+            font-size: 20px;
+            padding: 20px 30px;
+            width: 100%;
+            text-align: left;
+            &:after {
+               position: absolute;
+               top: 50%;
+               right: 30px;
+               transform: translate(0, -50%);
+               content: "+";
+               font-size: 26px;
+               color: #777;
+               color: $first;
+            }
+         }
+         .accordion__content {
+            overflow: hidden;
+            background-color: $bg;
+            max-height: 0;
+            transition: max-height 0.4s ease-in-out;
+            .accordion__text {
+               padding: 10px 0;
+            }
+            .accordion__text--alert {
+               color: $error;
+               margin: 15px 0 0 0;
+            }
+         }
+         .accordion__content.active {
+            display: block;
+         }
       }
    }
 }

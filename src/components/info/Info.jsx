@@ -17,7 +17,7 @@ const Info = () => {
                   Точка самовивозу знаходиться за адересою вул. Полтавська 28
                </p>
                <p className="accordion__text">Вигідна пропозиція для тих, хто живе або працює поруч з нами! Тож швидше біжи забирати знижку)</p>
-               <p className="accordion__text accordion__text--alert">P.S Знижка не підсумовується з іншими акційними пропозиціями</p>
+               <p className="accordion__text accordion__text--alert">P.S Знижка не підсумовується з іншими акційними пропозиціями!</p>
             </AccordionItem>
             
          </div>
