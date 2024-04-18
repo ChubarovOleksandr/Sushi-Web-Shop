@@ -30,65 +30,60 @@
       margin: 0 auto;
       font-family: $Nunito;
       font-size: 18px;
-      .accordion__item.active {
-         background-color: $eight;
-         transition: all 0.4s;
-         .accordion__content {
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            transition: max-height 0.4s;
-            border: 1px solid $eight;
-            padding: 15px 30px;
-         }
-         .accordion__button:after {
-            content: "-";
-            font-size: 26px;
-         }
-      }
       .accordion__item {
-         display: block;
-         width: 100%;
-         background-color: $third;
+         background: $bg2;
          border-radius: 30px;
-         transition: all 0.4s;
-         &:hover {
-            transition: background-color 0.2s;
-            transition: all 0.15s;
-            background-color: $eight;
+         margin-bottom: 20px;
+         .accordion__button.active {
+            background: $third;
+            transition: background 0.2s;
+            &:after {
+               content: '-';
+            }
          }
          .accordion__button {
-            position: relative;
+            border-radius: 30px;
             color: $first;
-            font-size: 20px;
+            font-size: 24px;
             padding: 20px 30px;
             width: 100%;
             text-align: left;
+            background: $eight;
+            transition: background 0.2s;
+            position: relative;
             &:after {
                position: absolute;
+               content: '+';
                top: 50%;
                right: 30px;
                transform: translate(0, -50%);
-               content: "+";
-               font-size: 26px;
-               color: #777;
-               color: $first;
+            }
+            &:hover {
+               background: $third;
+               transition: background 0.2s;
             }
          }
          .accordion__content {
-            overflow: hidden;
-            background-color: $bg;
             max-height: 0;
-            transition: max-height 0.4s ease-in-out;
+            padding: 0px 30px;
+            transition: max-height 0.2s ease-out;
+            overflow: hidden;
+            p:first-child {
+               padding-top: 30px;
+            }
+            p:last-child {
+               padding-bottom: 30px;
+            }
             .accordion__text {
                padding: 10px 0;
+               span {
+                  color: $sixth;
+               }
             }
             .accordion__text--alert {
                color: $error;
-               margin: 15px 0 0 0;
+               padding: 35px 0 20px 0;
             }
-         }
-         .accordion__content.active {
-            display: block;
          }
       }
    }
